@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\MailController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +21,5 @@ Route::get('/', function () {
 Route::post('charge', [PaymentController::class, 'charge']);
 Route::get('paymentsuccess', [PaymentController::class, 'payment_success']);
 Route::get('paymenterror', [PaymentController::class, 'payment_error']);
+
+Route::get('/send-email', [MailController::class, 'sendEmail']);
